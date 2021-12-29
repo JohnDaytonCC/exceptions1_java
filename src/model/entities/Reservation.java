@@ -16,7 +16,7 @@ public class Reservation {
 	Reservation(){
 	}
 
-	public Reservation(Integer roomNumber, Date checkin, Date checkout) throws DomainException {
+	public Reservation(Integer roomNumber, Date checkin, Date checkout) {
 		
 		Date now = new Date();
 		if(checkin.before(now) || checkout.before(now)) {
@@ -52,7 +52,7 @@ public class Reservation {
 		return TimeUnit.DAYS.convert(diff,TimeUnit.MILLISECONDS);
 	}
 	
-	public void updateDates(Date checkin, Date checkout) throws DomainException {
+	public void updateDates(Date checkin, Date checkout) {
 		
 		Date now = new Date();
 		if(checkin.before(now) || checkout.before(now)) {
